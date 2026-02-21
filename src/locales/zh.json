@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "rooms": "客房",
+    "dining": "餐饮",
+    "gallery": "图库",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "欢迎来到萨菲纳海滩",
+    "subtitle": "您的海边天堂",
+    "cta": "立即探索"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "萨菲纳海滩是一家豪华海滨度假村，提供世界一流的设施和令人叹为观止的海景。体验无与伦比的热情款待和放松。"
+  },
+  "rooms": {
+    "title": "我们的客房",
+    "subtitle": "专为您的舒适而设计的豪华住宿",
+    "ocean": "海景套房",
+    "garden": "花园别墅",
+    "penthouse": "顶层豪华套房",
+    "bookNow": "立即预订"
+  },
+  "dining": {
+    "title": "餐饮",
+    "description": "在我们的海滨餐厅品尝精致美食，提供新鲜当地海鲜和国际美食。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "address": "海滨路123号，海滨城市",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "版权所有。"
+  },
+  "language": {
+    "select": "语言"
+  }
+}

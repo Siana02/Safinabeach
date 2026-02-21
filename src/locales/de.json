@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "rooms": "Zimmer",
+    "dining": "Restaurant",
+    "gallery": "Galerie",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Willkommen bei Safina Beach",
+    "subtitle": "Ihr Paradies am Meer",
+    "cta": "Jetzt Entdecken"
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Safina Beach ist ein luxuriöses Strandresort mit erstklassigen Einrichtungen und atemberaubendem Meerblick. Erleben Sie ungekannte Gastfreundschaft und Entspannung."
+  },
+  "rooms": {
+    "title": "Unsere Zimmer",
+    "subtitle": "Luxuriöse Unterkünfte für Ihren Komfort",
+    "ocean": "Meerblick Suite",
+    "garden": "Gartenvilla",
+    "penthouse": "Penthouse Suite",
+    "bookNow": "Jetzt Buchen"
+  },
+  "dining": {
+    "title": "Restaurant",
+    "description": "Genießen Sie exquisite Küche in unseren Strandrestaurants mit frischen lokalen Meeresfrüchten und internationalen Gerichten."
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "address": "123 Beach Road, Küstenstadt",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "language": {
+    "select": "Sprache"
+  }
+}

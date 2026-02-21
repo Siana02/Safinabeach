@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "rooms": "Rooms",
+    "dining": "Dining",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to Safina Beach",
+    "subtitle": "Your paradise by the sea",
+    "cta": "Explore Now"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Safina Beach is a luxury beachfront resort offering world-class amenities and breathtaking ocean views. Experience unparalleled hospitality and relaxation."
+  },
+  "rooms": {
+    "title": "Our Rooms",
+    "subtitle": "Luxurious accommodations designed for your comfort",
+    "ocean": "Ocean View Suite",
+    "garden": "Garden Villa",
+    "penthouse": "Penthouse Suite",
+    "bookNow": "Book Now"
+  },
+  "dining": {
+    "title": "Dining",
+    "description": "Savor exquisite cuisine at our beachfront restaurants, featuring fresh local seafood and international dishes."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "123 Beach Road, Coastal City",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "select": "Language"
+  }
+}

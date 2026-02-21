@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "rooms": "Camere",
+    "dining": "Ristorante",
+    "gallery": "Galleria",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "title": "Benvenuti a Safina Beach",
+    "subtitle": "Il tuo paradiso sul mare",
+    "cta": "Esplora Ora"
+  },
+  "about": {
+    "title": "Chi siamo",
+    "description": "Safina Beach è un resort di lusso sul mare che offre servizi di livello mondiale e una vista mozzafiato sull'oceano. Vivi un'ospitalità e un relax senza pari."
+  },
+  "rooms": {
+    "title": "Le Nostre Camere",
+    "subtitle": "Sistemazioni lussuose progettate per il tuo comfort",
+    "ocean": "Suite Vista Oceano",
+    "garden": "Villa Giardino",
+    "penthouse": "Suite Penthouse",
+    "bookNow": "Prenota Ora"
+  },
+  "dining": {
+    "title": "Ristorante",
+    "description": "Assapora una cucina squisita nei nostri ristoranti sul mare, con frutti di mare freschi locali e piatti internazionali."
+  },
+  "contact": {
+    "title": "Contattaci",
+    "address": "123 Beach Road, Città Costiera",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati."
+  },
+  "language": {
+    "select": "Lingua"
+  }
+}
