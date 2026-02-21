@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "rooms": "Quartos",
+    "dining": "Restaurante",
+    "gallery": "Galeria",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Bem-vindo ao Safina Beach",
+    "subtitle": "Seu paraíso à beira-mar",
+    "cta": "Explorar Agora"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "description": "O Safina Beach é um resort de luxo à beira-mar que oferece comodidades de classe mundial e vistas deslumbrantes do oceano. Experimente uma hospitalidade e relaxamento incomparáveis."
+  },
+  "rooms": {
+    "title": "Nossos Quartos",
+    "subtitle": "Acomodações luxuosas projetadas para seu conforto",
+    "ocean": "Suíte com Vista para o Mar",
+    "garden": "Vila Jardim",
+    "penthouse": "Suíte Cobertura",
+    "bookNow": "Reserve Agora"
+  },
+  "dining": {
+    "title": "Restaurante",
+    "description": "Saboreie uma culinária requintada em nossos restaurantes à beira-mar, com frutos do mar frescos locais e pratos internacionais."
+  },
+  "contact": {
+    "title": "Fale Conosco",
+    "address": "123 Beach Road, Cidade Costeira",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  },
+  "language": {
+    "select": "Idioma"
+  }
+}

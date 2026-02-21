@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "rooms": "Chambres",
+    "dining": "Restauration",
+    "gallery": "Galerie",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Bienvenue à Safina Beach",
+    "subtitle": "Votre paradis au bord de la mer",
+    "cta": "Explorer Maintenant"
+  },
+  "about": {
+    "title": "À propos de nous",
+    "description": "Safina Beach est un complexe hôtelier de luxe en bord de mer offrant des équipements de classe mondiale et une vue époustouflante sur l'océan. Vivez une hospitalité et une détente sans pareilles."
+  },
+  "rooms": {
+    "title": "Nos Chambres",
+    "subtitle": "Des hébergements luxueux conçus pour votre confort",
+    "ocean": "Suite Vue Océan",
+    "garden": "Villa Jardin",
+    "penthouse": "Suite Penthouse",
+    "bookNow": "Réserver Maintenant"
+  },
+  "dining": {
+    "title": "Restauration",
+    "description": "Savourez une cuisine exquise dans nos restaurants en bord de mer, avec des fruits de mer frais locaux et des plats internationaux."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "address": "123 Beach Road, Ville Côtière",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@safinabeach.com"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "language": {
+    "select": "Langue"
+  }
+}
