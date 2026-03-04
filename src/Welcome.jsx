@@ -34,10 +34,11 @@ export default function Welcome() {
     const container = containerRef.current
     const imgs = imgEls.current
 
-    // Start every image off-screen on its respective side, vertically centred
+    // Start every image fully off-screen at the viewport edge on its respective side
+    const vw = window.innerWidth
     IMAGE_CONFIG.forEach((config, i) => {
       gsap.set(imgs[i], {
-        xPercent: config.side === 'right' ? 115 : -115,
+        x: config.side === 'right' ? vw : -vw,
         yPercent: -50,
         opacity: 0,
       })
@@ -51,9 +52,9 @@ export default function Welcome() {
     // ──────────────────────────────────────────────────────────────────
     const tl = gsap.timeline()
 
-    const slideIn  = { xPercent: 0,    opacity: 1, duration: DUR, ease: 'power2.out' }
-    const slideOutR = { xPercent: 115,  opacity: 0, duration: DUR, ease: 'power2.in' }
-    const slideOutL = { xPercent: -115, opacity: 0, duration: DUR, ease: 'power2.in' }
+    const slideIn   = { x: 0,   opacity: 1, duration: DUR, ease: 'power2.out' }
+    const slideOutR = { x: vw,  opacity: 0, duration: DUR, ease: 'power2.in' }
+    const slideOutL = { x: -vw, opacity: 0, duration: DUR, ease: 'power2.in' }
 
     // Image 1 in
     tl.to(imgs[0], slideIn,    0)

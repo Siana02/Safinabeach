@@ -43,7 +43,6 @@
 .welcome-col {
   position: relative;
   height: 100%;
-  overflow: hidden;
 }
 
 /* Center column — static letter block */
