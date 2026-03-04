@@ -1,0 +1,111 @@
+/* ─── Preload / Logo Reveal Screen ─── */
+
+.preload-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff7e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.preload-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ── The "S" letter ── */
+.preload-letter {
+  font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #00311f;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: anim-letter-s 5s ease-in-out forwards;
+}
+
+/* ── The line ── */
+.preload-line {
+  width: 40px;
+  height: 3px;
+  background-color: #4a8a69;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: anim-line 5s ease-in-out forwards;
+}
+
+/* Pseudo-element creates the dark-pine fill that sweeps left → right */
+.preload-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #00311f;
+  animation: anim-line-fill 5s ease-in-out forwards;
+}
+
+/* ── "safinabeachclub" text ── */
+.preload-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  color: #00311f;
+  text-transform: lowercase;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: anim-text 5s ease-in-out forwards;
+}
+
+/*
+ * ─── Timing map (total: 5 s) ────────────────────────────────
+ *   0.0 s =  0% │ start
+ *   0.4 s =  8% │ line fully visible
+ *   1.4 s = 28% │ fill complete → S & text start appearing
+ *   2.0 s = 40% │ S & text fully visible
+ *   3.2 s = 64% │ hold ends → reverse begins
+ *   3.7 s = 74% │ S & text gone
+ *   4.5 s = 90% │ fill fully retracted
+ *   4.9 s = 98% │ line faded out
+ * ────────────────────────────────────────────────────────────
+ */
+
+@keyframes anim-line {
+  0%         { opacity: 0; }
+  8%         { opacity: 1; }
+  90%        { opacity: 1; }
+  98%, 100%  { opacity: 0; }
+}
+
+@keyframes anim-line-fill {
+  0%, 8%    { width: 0%; }
+  28%       { width: 100%; }
+  74%       { width: 100%; }
+  90%, 100% { width: 0%; }
+}
+
+@keyframes anim-letter-s {
+  0%, 28%   { opacity: 0; transform: translateY(20px); }
+  40%       { opacity: 1; transform: translateY(0); }
+  64%       { opacity: 1; transform: translateY(0); }
+  74%, 100% { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes anim-text {
+  0%, 28%   { opacity: 0; transform: translateY(-20px); }
+  40%       { opacity: 1; transform: translateY(0); }
+  64%       { opacity: 1; transform: translateY(0); }
+  74%, 100% { opacity: 0; transform: translateY(20px); }
+}
