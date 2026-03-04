@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { MapPin, Phone } from 'lucide-react'
+import { MapPin, Phone, BedDouble } from 'lucide-react'
 import './App.css'
 import PreloadScreen from './PreloadScreen'
 import LanguageSelectionScreen from './LanguageSelectionScreen'
+import overview1 from './assets/Overview1.jpg'
+import overview2 from './assets/Overview2.jpg'
 
 const SUPPORTED_LANGUAGES = ['ar', 'de', 'en', 'es', 'fr', 'it', 'pt', 'zh']
 
@@ -47,6 +49,9 @@ function App() {
       <div dir={isRtl ? 'rtl' : 'ltr'}>
 
       <section id="home" className="hero">
+        <div className="hero-bg hero-bg-1" style={{ backgroundImage: `url(${overview1})` }} />
+        <div className="hero-bg hero-bg-2" style={{ backgroundImage: `url(${overview2})` }} />
+        <div className="hero-overlay" />
         <header className="hero-header">
           <nav className="hero-nav">
             <ul className="hero-nav-links">
@@ -82,9 +87,18 @@ function App() {
           </div>
         </header>
         <div className="hero-content">
-          <h1>{t('hero.title')}</h1>
-          <p>{t('hero.subtitle')}</p>
-          <a href="#rooms" className="cta-btn">{t('hero.cta')}</a>
+          <h1>Welcome to Paradise</h1>
+          <p>Experience sun-kissed shores, luxurious stays and unforgettable memories at Safina.</p>
+          <div className="hero-cta-group">
+            <a href="#rooms" className="cta-btn cta-btn-primary">
+              <BedDouble size={18} className="cta-icon" />
+              Explore Rooms
+            </a>
+            <a href="tel:+254780214521" className="cta-btn cta-btn-secondary">
+              <Phone size={18} className="cta-icon" />
+              Contact Us
+            </a>
+          </div>
         </div>
       </section>
 
