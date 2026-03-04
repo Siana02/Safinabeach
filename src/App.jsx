@@ -4,6 +4,7 @@ import { MapPin, Phone, BedDouble } from 'lucide-react'
 import './App.css'
 import PreloadScreen from './PreloadScreen'
 import LanguageSelectionScreen from './LanguageSelectionScreen'
+import Welcome from './Welcome'
 import overview1 from './assets/Overview1.jpg'
 import overview2 from './assets/Overview2.jpg'
 
@@ -113,12 +114,7 @@ function App() {
         </div>
       </section>
 
-      <section id="welcome" className="welcome">
-        <div className="welcome-content">
-          <h2>{t('welcome.title')}</h2>
-          <p>{t('welcome.description')}</p>
-        </div>
-      </section>
+      <Welcome />
 
       <section id="about" className="section about-section">
         <h2>{t('about.title')}</h2>
