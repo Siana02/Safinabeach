@@ -6,7 +6,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fff7e6;
+  background-color: #faf9f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
 /* ── The "S" letter ── */
 .preload-letter {
   font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
-  font-size: 8rem;
+  font-size: calc(8rem - 2px);
   font-weight: 900;
   line-height: 1;
   color: #00311f;
@@ -34,7 +34,7 @@
 
 /* ── The line ── */
 .preload-line {
-  width: 40px;
+  align-self: stretch;
   height: 3px;
   background-color: #4a8a69;
   border-radius: 2px;
@@ -59,7 +59,7 @@
 /* ── "safinabeachclub" text ── */
 .preload-text {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.35em;
   color: #00311f;
