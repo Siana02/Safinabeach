@@ -42,5 +42,9 @@
   },
   "language": {
     "select": "Sprache"
+  },
+  "welcome": {
+    "title": "Willkommen bei Safina Beach",
+    "description": "Eingebettet an den unberührten Ufern von Watamu, Kenia, ist der Safina Beach Club Ihr Tor zum Paradies. Sonnenverwöhnte Tage, türkisfarbene Gewässer und herzliche Gastfreundschaft erwarten Sie."
   }
 }

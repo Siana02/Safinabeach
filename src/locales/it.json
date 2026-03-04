@@ -42,5 +42,9 @@
   },
   "language": {
     "select": "Lingua"
+  },
+  "welcome": {
+    "title": "Benvenuti a Safina Beach",
+    "description": "Immerso sulle rive incontaminate di Watamu, in Kenya, il Safina Beach Club è il tuo accesso al paradiso. Giornate assolate, acque turchesi e calorosa ospitalità ti aspettano."
   }
 }

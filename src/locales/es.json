@@ -42,5 +42,9 @@
   },
   "language": {
     "select": "Idioma"
+  },
+  "welcome": {
+    "title": "Bienvenido a Safina Beach",
+    "description": "Ubicado en las prístinas orillas de Watamu, Kenia, el Safina Beach Club es su puerta al paraíso. Días bañados de sol, aguas turquesas y hospitalidad cálida le esperan."
   }
 }
