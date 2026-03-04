@@ -55,11 +55,22 @@ function App() {
         <header className="hero-header">
           <nav className="hero-nav">
             <ul className="hero-nav-links">
-              <li><a href="#home">{t('nav.home')}</a></li>
-              <li><a href="#about">{t('nav.about')}</a></li>
-              <li><a href="#rooms">{t('nav.rooms')}</a></li>
-              <li><a href="#dining">{t('nav.dining')}</a></li>
-              <li><a href="#contact">{t('nav.contact')}</a></li>
+              {[
+                { key: 'about', href: '#about' },
+                { key: 'rooms', href: '#rooms' },
+                { key: 'services', href: '#services' },
+                { key: 'events', href: '#events' },
+                { key: 'blog', href: '#blog' },
+              ].map(({ key, href }) => (
+                <li key={key}>
+                  <a href={href}>
+                    <span className="nav-link-inner">
+                      <span>{t(`nav.${key}`)}</span>
+                      <span>{t(`nav.${key}`)}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
           <div className="hero-brand">Safina Beach Club</div>

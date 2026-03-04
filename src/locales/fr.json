@@ -5,7 +5,10 @@
     "rooms": "Chambres",
     "dining": "Restauration",
     "gallery": "Galerie",
-    "contact": "Contact"
+    "contact": "Contact",
+    "services": "Services",
+    "events": "Événements",
+    "blog": "Blog"
   },
   "hero": {
     "title": "Bienvenue à Safina Beach",
