@@ -1,0 +1,153 @@
+/* ─── Language Selection Screen (Section 2) ─── */
+
+.lang-select-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff7e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  /* Start above the viewport; slides down into view */
+  transform: translateY(-100%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-select-screen.entered {
+  transform: translateY(0);
+}
+
+.lang-select-screen.exiting {
+  transform: translateY(-100%);
+}
+
+/* ── Content wrapper ── */
+.lang-select-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Static logo ── */
+.lang-select-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2.5rem;
+}
+
+.lang-logo-letter {
+  font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #00311f;
+}
+
+.lang-logo-line {
+  width: 40px;
+  height: 3px;
+  background-color: #00311f;
+  border-radius: 2px;
+}
+
+.lang-logo-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  color: #00311f;
+  text-transform: lowercase;
+}
+
+/* ── Headline ── */
+.lang-select-headline {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #00311f;
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 65vw;
+  margin-bottom: 3rem;
+}
+
+/* ── Language buttons grid ── */
+.lang-buttons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 600px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lang-btn {
+  padding: 16px 32px;
+  background: #fff7e6;
+  border: 2px solid #00311f;
+  border-radius: 50px;
+  color: #00311f;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  animation: lang-btn-fadein 0.35s ease forwards;
+  transition: background 0.25s, color 0.25s;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+  background: #00311f;
+  color: #fff7e6;
+  outline: none;
+}
+
+/* Staggered fade-in for buttons (after screen slides in) */
+.lang-buttons-grid li:nth-child(1) .lang-btn { animation-delay: 0.4s; }
+.lang-buttons-grid li:nth-child(2) .lang-btn { animation-delay: 0.45s; }
+.lang-buttons-grid li:nth-child(3) .lang-btn { animation-delay: 0.5s; }
+.lang-buttons-grid li:nth-child(4) .lang-btn { animation-delay: 0.55s; }
+.lang-buttons-grid li:nth-child(5) .lang-btn { animation-delay: 0.6s; }
+.lang-buttons-grid li:nth-child(6) .lang-btn { animation-delay: 0.65s; }
+.lang-buttons-grid li:nth-child(7) .lang-btn { animation-delay: 0.7s; }
+.lang-buttons-grid li:nth-child(8) .lang-btn { animation-delay: 0.75s; }
+
+@keyframes lang-btn-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .lang-select-headline {
+    max-width: 88vw;
+    font-size: 1rem;
+  }
+
+  .lang-buttons-grid {
+    max-width: 88vw;
+  }
+
+  .lang-btn {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  .lang-logo-letter {
+    font-size: 4rem;
+  }
+}
