@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { MapPin, Phone } from 'lucide-react'
 import './App.css'
 import PreloadScreen from './PreloadScreen'
 import LanguageSelectionScreen from './LanguageSelectionScreen'
@@ -44,32 +45,42 @@ function App() {
       )}
       {phase === 'preload' && <PreloadScreen onComplete={handlePreloadComplete} />}
       <div dir={isRtl ? 'rtl' : 'ltr'}>
-      <nav className="navbar">
-        <div className="nav-brand">🌊 Safina Beach</div>
-        <ul className="nav-links">
-          <li><a href="#home">{t('nav.home')}</a></li>
-          <li><a href="#about">{t('nav.about')}</a></li>
-          <li><a href="#rooms">{t('nav.rooms')}</a></li>
-          <li><a href="#dining">{t('nav.dining')}</a></li>
-          <li><a href="#contact">{t('nav.contact')}</a></li>
-        </ul>
-        <div className="lang-switcher">
-          <label htmlFor="lang-select">{t('language.select')}: </label>
-          <select
-            id="lang-select"
-            value={i18n.language.split('-')[0]}
-            onChange={changeLanguage}
-          >
-            {LANGUAGES.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </nav>
 
       <section id="home" className="hero">
+        <header className="hero-header">
+          <nav className="hero-nav">
+            <ul className="hero-nav-links">
+              <li><a href="#home">{t('nav.home')}</a></li>
+              <li><a href="#about">{t('nav.about')}</a></li>
+              <li><a href="#rooms">{t('nav.rooms')}</a></li>
+              <li><a href="#dining">{t('nav.dining')}</a></li>
+              <li><a href="#contact">{t('nav.contact')}</a></li>
+            </ul>
+          </nav>
+          <div className="hero-brand">Safina Beach Club</div>
+          <div className="hero-contact">
+            <span className="hero-contact-item">
+              <MapPin size={15} className="hero-icon" />
+              <span>Watamu 🇰🇪</span>
+            </span>
+            <span className="hero-contact-item">
+              <Phone size={15} className="hero-icon" />
+              <span>+254780 214521</span>
+            </span>
+            <select
+              id="lang-select"
+              value={i18n.language.split('-')[0]}
+              onChange={changeLanguage}
+              className="hero-lang-select"
+            >
+              {LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </header>
         <div className="hero-content">
           <h1>{t('hero.title')}</h1>
           <p>{t('hero.subtitle')}</p>
