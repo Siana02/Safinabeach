@@ -43,7 +43,6 @@
 .welcome-col {
   position: relative;
   height: 100%;
-  overflow: hidden;
 }
 
 /* Center column — static letter block */
@@ -115,7 +114,7 @@
   position: absolute;
   width: 78%;
   left: 11%;  /* centred within the column */
-  /* top is set inline per image */
+  top: 50%;   /* GSAP applies yPercent: -50 for vertical centering */
   will-change: transform, opacity;
 }
 
