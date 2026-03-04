@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import './App.css'
+import PreloadScreen from './PreloadScreen'
 
 const LANGUAGES = [
   { code: 'en', label: 'English' },
@@ -21,7 +22,9 @@ function App() {
   }
 
   return (
-    <div dir={isRtl ? 'rtl' : 'ltr'}>
+    <>
+      <PreloadScreen />
+      <div dir={isRtl ? 'rtl' : 'ltr'}>
       <nav className="navbar">
         <div className="nav-brand">🌊 Safina Beach</div>
         <ul className="nav-links">
@@ -89,7 +92,8 @@ function App() {
       <footer className="footer">
         <p>© {new Date().getFullYear()} Safina Beach. {t('footer.rights')}</p>
       </footer>
-    </div>
+      </div>
+    </>
   )
 }
 
