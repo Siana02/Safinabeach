@@ -1,0 +1,145 @@
+/* ─────────────────────────────────────────────
+   WELCOME SECTION
+   ───────────────────────────────────────────── */
+
+/* Outer container — provides ~400 vh of scroll space so the
+   sticky panel has room to pin through 5 image reveals.         */
+.welcome-scroll-container {
+  position: relative;
+  width: 100vw;
+  /* 400 vh gives ≈ 300 vh of "pinned scroll" (400 - 100 viewport) */
+  height: 400vh;
+  z-index: 2; /* sits above the Hero (z-index: 1) */
+}
+
+/* Inner panel — stays fixed in viewport during scroll */
+.welcome-sticky {
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+
+  /* Temporary warm background; replaced by Welcomebg.jpg below */
+  background-color: #fff7e6;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: stretch;
+}
+
+/* 3-column grid: equal side columns + constrained center */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(340px, 480px) 1fr;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+/* Side columns — images are positioned absolutely inside */
+.welcome-col {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Center column — static letter block */
+.welcome-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  z-index: 10; /* always above side images */
+  text-align: center;
+}
+
+/* ── Logo ── */
+.welcome-logo {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Subtitle ── */
+.welcome-subtitle {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4a8a69;
+  margin-bottom: 0.6rem;
+}
+
+/* ── Main Title ── */
+.welcome-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  color: #00311f;
+  line-height: 1.25;
+  margin-bottom: 1.6rem;
+  max-width: 380px;
+}
+
+/* ── Founder Letter ── */
+.welcome-letter {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.75;
+  color: #00311f;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.welcome-letter p {
+  margin: 0;
+}
+
+.welcome-letter-signature {
+  margin-top: 0.4rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #2a4a35;
+}
+
+/* ── Image wrappers (absolutely positioned in their column) ── */
+.welcome-img-wrapper {
+  position: absolute;
+  width: 78%;
+  left: 11%;  /* centred within the column */
+  /* top is set inline per image */
+  will-change: transform, opacity;
+}
+
+.welcome-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  /* No shadows, no filters — clean editorial style */
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — hide side columns on narrow screens
+   (mobile layout deferred per spec)
+   ───────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .welcome-grid {
+    grid-template-columns: 0 1fr 0;
+  }
+  .welcome-col-left,
+  .welcome-col-right {
+    display: none;
+  }
+  .welcome-col-center {
+    padding: 2rem 1.25rem;
+  }
+}
