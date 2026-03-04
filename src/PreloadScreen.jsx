@@ -2,9 +2,12 @@ import { useState, useEffect, useRef } from 'react'
 import './PreloadScreen.css'
 
 const ANIMATION_DURATION_MS = 5100
+const SLIDE_DELAY_MS = 250
+const SLIDE_DURATION_MS = 900
 
 function PreloadScreen({ onComplete }) {
-  const [visible, setVisible] = useState(true)
+  const [sliding, setSliding] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const onCompleteRef = useRef(onComplete)
 
   useEffect(() => {
@@ -12,17 +15,24 @@ function PreloadScreen({ onComplete }) {
   })
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisible(false)
-      onCompleteRef.current?.()
-    }, ANIMATION_DURATION_MS)
-    return () => clearTimeout(timer)
+    let slideTimer, doneTimer
+    slideTimer = setTimeout(() => {
+      setSliding(true)
+      doneTimer = setTimeout(() => {
+        setHidden(true)
+        onCompleteRef.current?.()
+      }, SLIDE_DURATION_MS)
+    }, ANIMATION_DURATION_MS + SLIDE_DELAY_MS)
+    return () => {
+      clearTimeout(slideTimer)
+      clearTimeout(doneTimer)
+    }
   }, [])
 
-  if (!visible) return null
+  if (hidden) return null
 
   return (
-    <div className="preload-screen">
+    <div className={`preload-screen${sliding ? ' sliding' : ''}`}>
       <div className="preload-inner">
         <div className="preload-letter">S</div>
         <div className="preload-line" />

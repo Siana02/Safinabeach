@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import './App.css'
 import PreloadScreen from './PreloadScreen'
@@ -22,13 +22,15 @@ function App() {
   const isRtl = i18n.language === 'ar'
   const [phase, setPhase] = useState('preload') // 'preload' | 'language' | 'hero'
 
-  const handlePreloadComplete = () => {
+  const needsLanguageSelection = useMemo(() => {
     const browserLang = (navigator.language || '').split('-')[0].toLowerCase()
-    if (SUPPORTED_LANGUAGES.includes(browserLang)) {
-      setPhase('hero')
-    } else {
-      setPhase('language')
-    }
+    return !SUPPORTED_LANGUAGES.includes(browserLang)
+  }, [])
+
+  const shouldShowLanguageScreen = needsLanguageSelection && (phase === 'preload' || phase === 'language')
+
+  const handlePreloadComplete = () => {
+    setPhase(needsLanguageSelection ? 'language' : 'hero')
   }
 
   const changeLanguage = (e) => {
@@ -37,10 +39,10 @@ function App() {
 
   return (
     <>
-      {phase === 'preload' && <PreloadScreen onComplete={handlePreloadComplete} />}
-      {phase === 'language' && (
+      {shouldShowLanguageScreen && (
         <LanguageSelectionScreen onLanguageSelected={() => setPhase('hero')} />
       )}
+      {phase === 'preload' && <PreloadScreen onComplete={handlePreloadComplete} />}
       <div dir={isRtl ? 'rtl' : 'ltr'}>
       <nav className="navbar">
         <div className="nav-brand">🌊 Safina Beach</div>
