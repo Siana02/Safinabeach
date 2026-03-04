@@ -1,13 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './PreloadScreen.css'
 
 const ANIMATION_DURATION_MS = 5100
 
-function PreloadScreen() {
+function PreloadScreen({ onComplete }) {
   const [visible, setVisible] = useState(true)
+  const onCompleteRef = useRef(onComplete)
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), ANIMATION_DURATION_MS)
+    onCompleteRef.current = onComplete
+  })
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(false)
+      onCompleteRef.current?.()
+    }, ANIMATION_DURATION_MS)
     return () => clearTimeout(timer)
   }, [])
 
