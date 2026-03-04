@@ -34,43 +34,42 @@ export default function Welcome() {
     const container = containerRef.current
     const imgs = imgEls.current
 
-    // Start every image fully off-screen at the viewport edge on its respective side
-    const vw = window.innerWidth
-    IMAGE_CONFIG.forEach((config, i) => {
+    // Start every image fully off-screen below the viewport
+    const vh = window.innerHeight
+    IMAGE_CONFIG.forEach((_config, i) => {
       gsap.set(imgs[i], {
-        x: config.side === 'right' ? vw : -vw,
+        y: vh,
         yPercent: -50,
         opacity: 0,
       })
     })
 
     // ─── Sequential reveal timeline ───────────────────────────────────
-    // Phase 1 : images 1 & 2 slide in (1 still visible when 2 arrives)
+    // Phase 1 : images 1 & 2 slide in from below (1 still visible when 2 arrives)
     // Phase 2 : image 3 in = image 1 out;  image 4 in = image 2 out
     // Phase 3 : images 3 & 4 slide out, then image 5 slides in
     // Phase 4 : settling pause with image 5 visible
     // ──────────────────────────────────────────────────────────────────
     const tl = gsap.timeline()
 
-    const slideIn   = { x: 0,   opacity: 1, duration: DUR, ease: 'power2.out' }
-    const slideOutR = { x: vw,  opacity: 0, duration: DUR, ease: 'power2.in' }
-    const slideOutL = { x: -vw, opacity: 0, duration: DUR, ease: 'power2.in' }
+    const slideIn    = { y: 0,   opacity: 1, duration: DUR, ease: 'power2.out' }
+    const slideOutUp = { y: -vh, opacity: 0, duration: DUR, ease: 'power2.in' }
 
     // Image 1 in
-    tl.to(imgs[0], slideIn,    0)
+    tl.to(imgs[0], slideIn,     0)
     // Image 2 in (slightly after)
-    tl.to(imgs[1], slideIn,    0.7)
+    tl.to(imgs[1], slideIn,     0.7)
     // Image 1 out + Image 3 in (simultaneous)
-    tl.to(imgs[0], slideOutR,  1.5)
-    tl.to(imgs[2], slideIn,    1.5)
+    tl.to(imgs[0], slideOutUp,  1.5)
+    tl.to(imgs[2], slideIn,     1.5)
     // Image 2 out + Image 4 in (simultaneous)
-    tl.to(imgs[1], slideOutL,  2.0)
-    tl.to(imgs[3], slideIn,    2.0)
+    tl.to(imgs[1], slideOutUp,  2.0)
+    tl.to(imgs[3], slideIn,     2.0)
     // Images 3 & 4 out (simultaneous)
-    tl.to(imgs[2], slideOutR,  2.8)
-    tl.to(imgs[3], slideOutL,  2.8)
+    tl.to(imgs[2], slideOutUp,  2.8)
+    tl.to(imgs[3], slideOutUp,  2.8)
     // Image 5 in (after brief gap)
-    tl.to(imgs[4], slideIn,    3.3)
+    tl.to(imgs[4], slideIn,     3.3)
     // Settling pause — keeps image 5 visible before the pin releases
     tl.to({}, { duration: 0.8 }, 4.0)
 
