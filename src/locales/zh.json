@@ -5,7 +5,10 @@
     "rooms": "客房",
     "dining": "餐饮",
     "gallery": "图库",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "services": "服务",
+    "events": "活动",
+    "blog": "博客"
   },
   "hero": {
     "title": "欢迎来到萨菲纳海滩",
