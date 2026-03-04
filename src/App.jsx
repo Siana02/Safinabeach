@@ -113,6 +113,13 @@ function App() {
         </div>
       </section>
 
+      <section id="welcome" className="welcome">
+        <div className="welcome-content">
+          <h2>{t('welcome.title')}</h2>
+          <p>{t('welcome.description')}</p>
+        </div>
+      </section>
+
       <section id="about" className="section about-section">
         <h2>{t('about.title')}</h2>
         <p>{t('about.description')}</p>

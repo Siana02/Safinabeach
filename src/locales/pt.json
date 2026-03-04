@@ -42,5 +42,9 @@
   },
   "language": {
     "select": "Idioma"
+  },
+  "welcome": {
+    "title": "Bem-vindo ao Safina Beach",
+    "description": "Situado nas praias imaculadas de Watamu, no Quênia, o Safina Beach Club é a sua porta de entrada para o paraíso. Dias ensolarados, águas turquesa e hospitalidade calorosa aguardam por você."
   }
 }
