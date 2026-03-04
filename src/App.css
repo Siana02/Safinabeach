@@ -118,12 +118,12 @@
 
 .hero-bg-1 {
   z-index: 1;
-  animation: heroImg1 10s ease-in-out infinite;
+  animation: heroImg1 10s linear infinite;
 }
 
 .hero-bg-2 {
   z-index: 2;
-  animation: heroImg2 10s ease-in-out infinite;
+  animation: heroImg2 10s linear infinite;
 }
 
 /* Subtle dark overlay for text readability */
@@ -136,19 +136,18 @@
 
 @keyframes heroImg1 {
   0%   { opacity: 1; transform: scale(1); }
-  40%  { opacity: 1; transform: scale(1.1); }
-  48%  { opacity: 0; transform: scale(1.1); }
-  49%  { opacity: 0; transform: scale(1); }
-  92%  { opacity: 0; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1); }
+  49%  { opacity: 1; transform: scale(1.12); }
+  50%  { opacity: 0; transform: scale(1.12); }
+  51%  { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
 }
 
 @keyframes heroImg2 {
-  0%   { opacity: 0; transform: scale(1); }
-  48%  { opacity: 0; transform: scale(1); }
-  56%  { opacity: 1; transform: scale(1); }
-  92%  { opacity: 1; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.1); }
+  0%   { opacity: 0; transform: scale(1.12); }
+  49%  { opacity: 0; transform: scale(1.12); }
+  50%  { opacity: 1; transform: scale(1.12); }
+  99%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
 }
 
 .hero-content {
@@ -363,6 +362,31 @@
 
 [dir='rtl'] .hero-contact {
   flex-direction: row-reverse;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 900px;
+  }
+  .hero-content h1 {
+    font-size: 5.2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1.45rem;
+    margin-bottom: 3rem;
+    max-width: 640px;
+  }
+  .cta-btn {
+    padding: 1.1rem 2.6rem;
+    font-size: 1.1rem;
+    gap: 0.6rem;
+  }
+  .cta-icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media (max-width: 768px) {
