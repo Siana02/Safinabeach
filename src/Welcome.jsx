@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import welcomeBg from './assets/Welcomebg.jpg'
@@ -26,6 +27,7 @@ const IMAGE_CONFIG = [
 const DUR = 0.4
 
 export default function Welcome() {
+  const { t } = useTranslation()
   const containerRef = useRef(null)
   // Single ref that holds all five image wrapper DOM nodes
   const imgEls = useRef([])
@@ -133,7 +135,7 @@ export default function Welcome() {
               </svg>
             </div>
 
-            <p className="welcome-subtitle">Welcome to Safina</p>
+            <p className="welcome-subtitle">{t('welcome.title')}</p>
             <h2 className="welcome-title">Where luxury meets the ocean breeze</h2>
 
             <div className="welcome-letter">
@@ -141,8 +143,7 @@ export default function Welcome() {
                 Dear valued guests,
               </p>
               <p>
-                It is with the warmest of hearts that we welcome you to Safina Beach — a sanctuary
-                where time slows, the tides speak softly, and every moment is yours to keep.
+                {t('welcome.description')}
               </p>
               <p>
                 Here, along the sun-kissed shores of Watamu, we have built not just a resort,
