@@ -7,6 +7,7 @@ import LanguageSelectionScreen from './LanguageSelectionScreen'
 import Welcome from './Welcome'
 import Gallery from './Gallery'
 import RoomsSection from './RoomsSection'
+import ServicesSection from './ServicesSection'
 import overview1 from './assets/Overview1.jpg'
 import overview2 from './assets/Overview2.jpg'
 
@@ -123,6 +124,8 @@ function App() {
       <Gallery />
 
       <RoomsSection />
+
+      <ServicesSection />
 
       <section id="about" className="section about-section">
         <h2>{t('about.title')}</h2>

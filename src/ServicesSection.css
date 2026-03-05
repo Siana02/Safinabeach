@@ -1,0 +1,287 @@
+/* ─────────────────────────────────────────────
+   SERVICES & AMENITIES SECTION
+   ───────────────────────────────────────────── */
+
+.services-section {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff7e6;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Full-width inner wrapper */
+.services-inner {
+  width: 100%;
+}
+
+/* ── Header row ── */
+.services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-left: clamp(2rem, 8vw, 10rem);
+  padding-right: clamp(2rem, 8vw, 10rem);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+/* ── Left text block ── */
+.services-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+/* ── Mini title (category label) ── */
+.services-mini-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4a8a69;
+  margin: 0 0 0.6rem 0;
+}
+
+/* ── Main title ── */
+.services-main-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 700;
+  color: #00311f;
+  line-height: 1.2;
+  margin: 0 0 1.25rem 0;
+}
+
+/* ── Description paragraph ── */
+.services-description {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ── Right CTA container ── */
+.services-header-cta {
+  flex-shrink: 0;
+}
+
+/* ── Explore All Services button ── */
+.services-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #00311f;
+  color: #fff7e6;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+}
+
+.services-explore-btn:hover {
+  background-color: #4a8a69;
+}
+
+/* ─────────────────────────────────────────────
+   DISPLAY AREA — IMAGE LEFT / CONTENT RIGHT
+   ───────────────────────────────────────────── */
+
+.services-display {
+  display: flex;
+  width: 100%;
+  min-height: 75vh;
+  align-items: stretch;
+}
+
+/* ── Left: image column ── */
+/* Image height kept in the 75–80vh range per design spec for an immersive feel */
+.services-image-col {
+  width: 50%;
+  height: 78vh;
+  overflow: hidden;
+  border-radius: 0 4px 4px 0;
+  flex-shrink: 0;
+  animation: services-img-fade 0.4s ease;
+}
+
+@keyframes services-img-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.services-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Right: content column ── */
+.services-content-col {
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: clamp(2.5rem, 6vw, 7rem);
+  padding-right: clamp(2rem, 6vw, 7rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Animated content block */
+.services-content-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  animation: services-content-fade 0.35s ease;
+}
+
+@keyframes services-content-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Service icon ── */
+.services-icon {
+  color: #00311f;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* ── Service title ── */
+.services-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+  font-weight: 700;
+  color: #00311f;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+/* ── Service description ── */
+.services-desc {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  font-weight: 400;
+  color: #3a3a3a;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 420px;
+}
+
+/* ─────────────────────────────────────────────
+   NAVIGATION ARROWS
+   ───────────────────────────────────────────── */
+
+.services-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.services-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #00311f;
+  color: #00311f;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.services-nav-btn:hover {
+  border-color: #4a8a69;
+  color: #4a8a69;
+}
+
+.services-nav-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .services-header-text {
+    max-width: 100%;
+  }
+
+  .services-display {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .services-image-col {
+    width: 100%;
+    height: 55vw;
+    min-height: 260px;
+    border-radius: 0;
+  }
+
+  .services-content-col {
+    width: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .services-nav {
+    padding-top: 2rem;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .services-header {
+    padding-left: clamp(1.25rem, 5vw, 2rem);
+    padding-right: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .services-content-col {
+    padding-left: clamp(1.25rem, 5vw, 2rem);
+    padding-right: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .services-image-col {
+    height: 65vw;
+    border-radius: 0;
+  }
+}
