@@ -112,11 +112,12 @@
   color: #fff7e6;
 }
 
-/* Hero outer container — stays in normal document flow */
+/* Hero outer container — taller than 100vh so the sticky inner panel
+   has scroll room for the card-stack transition (Welcome slides over Hero) */
 .hero-section {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 /* Hero inner wrapper — sticky so it remains visible behind the Welcome card */
