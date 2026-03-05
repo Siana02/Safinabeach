@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import welcomeBg from './assets/Welcomebg.jpg'
 import img1 from './assets/Welcome1.jpg'
 import img2 from './assets/Welcome2.jpg'
 import img3 from './assets/Welcome3.png'
@@ -91,7 +90,6 @@ export default function Welcome() {
       {/* Inner sticky panel — stays fixed in viewport during scroll */}
       <div
         className="welcome-sticky"
-        style={{ backgroundImage: `url(${welcomeBg})` }}
       >
         {/* 3-column grid */}
         <div className="welcome-grid">

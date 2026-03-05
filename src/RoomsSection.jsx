@@ -133,10 +133,13 @@ export default function RoomsSection() {
 
                       {/* Price + Book row */}
                       <div className="room-price-row">
-                        <span className="room-price">
-                          {room.price}
-                          <span className="room-price-unit"> / night</span>
-                        </span>
+                        <div className="room-price-block">
+                          <span className="room-starting-at">starting at</span>
+                          <span className="room-price">
+                            {room.price}
+                            <span className="room-price-unit"> / night</span>
+                          </span>
+                        </div>
                         <a href="#contact" className="room-book-btn">Book</a>
                       </div>
                     </div>
