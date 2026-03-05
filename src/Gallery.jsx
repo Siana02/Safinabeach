@@ -1,17 +1,18 @@
 import { useState, useRef, useEffect } from 'react'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
-import img1 from './assets/Welcome1.jpg'
-import img2 from './assets/Welcome2.jpg'
-import img3 from './assets/Welcome3.png'
-import img4 from './assets/Welcome4.jpg'
-import img5 from './assets/Welcome5.jpg'
-import img6 from './assets/Overview1.jpg'
-import img7 from './assets/Overview2.jpg'
-import img8 from './assets/coconuttree.jpg'
-import img9 from './assets/palmtrees.jpg'
+import img1 from './assets/coconuttree.jpg'
+import img2 from './assets/hallway.jpg'
+import img3 from './assets/palmtrees.jpg'
+import img4 from './assets/Welcome1.jpg'
+import img5 from './assets/Welcome2.jpg'
+import img6 from './assets/Welcome3.png'
+import img7 from './assets/Welcome4.jpg'
+import img8 from './assets/Welcome5.jpg'
+import img9 from './assets/Overview1.jpg'
+import img10 from './assets/Overview2.jpg'
 import './Gallery.css'
 
-const GALLERY_IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
+const GALLERY_IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10]
 const GAP_PX = 24
 
 function getVisibleCount() {
