@@ -136,27 +136,24 @@ export default function Welcome() {
             </div>
 
             <p className="welcome-subtitle">{t('welcome.title')}</p>
-            <h2 className="welcome-title">Where luxury meets the ocean breeze</h2>
+            <h2 className="welcome-title">{t('welcome.tagline')}</h2>
 
             <div className="welcome-letter">
               <p>
-                Dear valued guests,
+                {t('welcome.greeting')}
               </p>
               <p>
                 {t('welcome.description')}
               </p>
               <p>
-                Here, along the sun-kissed shores of Watamu, we have built not just a resort,
-                but a living memory. Each room, each meal, each quiet evening by the water
-                has been crafted with intention — for you.
+                {t('welcome.body')}
               </p>
               <p>
-                Whether this is your first visit or a cherished return, we promise to make it
-                unforgettable.
+                {t('welcome.closing')}
               </p>
               <p className="welcome-letter-signature">
-                With warmth &amp; gratitude,<br />
-                <em>The Safina Family</em>
+                {t('welcome.signature')}<br />
+                <em>{t('welcome.family')}</em>
               </p>
             </div>
           </div>
