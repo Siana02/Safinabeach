@@ -7,19 +7,16 @@
   min-height: 100vh;
   background-color: #fff7e6;
   padding-top: 120px;
-  padding-bottom: 120px;
-  padding-left: clamp(2rem, 8vw, 10rem);
-  padding-right: clamp(2rem, 8vw, 10rem);
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* Centered max-width container */
+/* Full-width inner wrapper */
 .rooms-section-inner {
   width: 100%;
-  max-width: 1200px;
 }
 
 /* ── Header row — text left, button right ── */
@@ -28,6 +25,9 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 3rem;
+  padding-left: clamp(2rem, 8vw, 10rem);
+  padding-right: clamp(2rem, 8vw, 10rem);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 /* ── Left text block ── */
@@ -101,6 +101,228 @@
 }
 
 /* ─────────────────────────────────────────────
+   INTERACTIVE SHOWCASE — SPLIT LAYOUT
+   ───────────────────────────────────────────── */
+
+.rooms-showcase {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  align-items: stretch;
+}
+
+/* ── Left accordion column ── */
+.rooms-accordion {
+  width: 50%;
+  padding-left: clamp(2rem, 8vw, 10rem);
+  padding-right: clamp(1.5rem, 4vw, 4rem);
+  padding-top: 1rem;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ── Individual room item ── */
+.room-item {
+  border-top: 1px solid rgba(0, 49, 31, 0.12);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.room-item:last-child {
+  border-bottom: 1px solid rgba(0, 49, 31, 0.12);
+}
+
+/* ── Room name button ── */
+.room-name {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 400;
+  color: #4a8a69;
+  line-height: 1.2;
+  position: relative;
+  transition: color 0.25s ease;
+  overflow: visible;
+}
+
+/* Hover: darken text */
+.room-name:not(.room-name--active):hover {
+  color: #00311f;
+}
+
+/* Hover line extending toward image */
+.room-name:not(.room-name--active)::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 0;
+  background: linear-gradient(to right, #4a8a69, transparent);
+  transition: width 0.4s ease;
+  margin-left: 0.75rem;
+  pointer-events: none;
+}
+
+.room-name:not(.room-name--active):hover::after {
+  width: clamp(60px, 10vw, 160px);
+}
+
+/* Active room name */
+.room-name--active {
+  color: #00311f;
+  cursor: default;
+}
+
+/* ── Expanded room details ── */
+.room-details {
+  margin-top: 1.25rem;
+  animation: rooms-details-in 0.3s ease;
+}
+
+@keyframes rooms-details-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Icon row ── */
+.room-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.room-icon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #00311f;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ── Price + Book row ── */
+.room-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.room-price {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  font-weight: 700;
+  color: #00311f;
+}
+
+.room-price-unit {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+/* ── Book button ── */
+.room-book-btn {
+  display: inline-block;
+  background-color: #00311f;
+  color: #fff7e6;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.room-book-btn:hover {
+  background-color: #4a8a69;
+}
+
+/* ─────────────────────────────────────────────
+   RIGHT — IMAGE AREA
+   ───────────────────────────────────────────── */
+
+.rooms-image-area {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Image wrapper: fades in on room change */
+.rooms-image-container {
+  width: 50vw;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px;
+  animation: rooms-img-fade 0.45s ease;
+}
+
+@keyframes rooms-img-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.rooms-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gradient overlay for caption readability */
+.rooms-image-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* Caption */
+.rooms-image-caption {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  margin: 0;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #fff7e6;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* ─────────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -113,13 +335,51 @@
   .rooms-section-text {
     max-width: 100%;
   }
+
+  /* Stack showcase vertically on smaller screens */
+  .rooms-showcase {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .rooms-accordion {
+    width: 100%;
+    padding-right: clamp(2rem, 8vw, 10rem);
+    padding-bottom: 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .rooms-image-area {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rooms-image-container {
+    width: 100%;
+    height: 55vw;
+    min-height: 260px;
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 767px) {
   .rooms-section-editorial {
     padding-top: 80px;
-    padding-bottom: 80px;
+  }
+
+  .rooms-section-header {
     padding-left: clamp(1.25rem, 5vw, 2rem);
     padding-right: clamp(1.25rem, 5vw, 2rem);
   }
+
+  .rooms-accordion {
+    padding-left: clamp(1.25rem, 5vw, 2rem);
+    padding-right: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .rooms-image-container {
+    height: 65vw;
+    border-radius: 0;
+  }
 }
+
