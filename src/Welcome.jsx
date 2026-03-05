@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import welcomeBg from './assets/Welcomebg.jpg'
 import img1 from './assets/Welcome1.jpg'
 import img2 from './assets/Welcome2.jpg'
-import img3 from './assets/Welcome3.jpg'
+import img3 from './assets/Welcome3.png'
 import img4 from './assets/Welcome4.jpg'
 import img5 from './assets/Welcome5.jpg'
 import './Welcome.css'
@@ -47,8 +47,8 @@ export default function Welcome() {
     })
 
     // ─── Sequential reveal timeline ───────────────────────────────────
-    // Phase 1 : images 1 & 2 slide in from below (1 still visible when 2 arrives)
-    // Phase 2 : image 3 in = image 1 out;  image 4 in = image 2 out
+    // Phase 1 : image 1 slides in, then image 2 slides in
+    // Phase 2 : image 1 out + image 3 in;  image 2 out + image 4 in
     // Phase 3 : images 3 & 4 slide out, then image 5 slides in
     // Phase 4 : settling pause with image 5 visible
     // ──────────────────────────────────────────────────────────────────
@@ -75,14 +75,18 @@ export default function Welcome() {
     // Settling pause — keeps image 5 visible before the pin releases
     tl.to({}, { duration: 0.8 }, 4.0)
 
-    // Scrub the timeline across the full sticky scroll range of the container
+    // Pin the welcome panel and scrub the timeline across 300 vh of scroll.
+    // GSAP handles adding the scroll space (pinSpacing: true by default).
     const st = ScrollTrigger.create({
       id: WELCOME_ST_ID,
       trigger: container,
       start: 'top top',
-      end: () => `+=${container.offsetHeight - window.innerHeight}`,
+      end: () => `+=${window.innerHeight * 3}`,
+      pin: true,
+      pinSpacing: true,
       animation: tl,
-      scrub: 0.6,
+      scrub: 1,
+      invalidateOnRefresh: true,
     })
 
     return () => {
