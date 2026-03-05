@@ -50,67 +50,69 @@ function App() {
       {phase === 'preload' && <PreloadScreen onComplete={handlePreloadComplete} />}
       <div dir={isRtl ? 'rtl' : 'ltr'}>
 
-      <section id="home" className="hero">
-        <div className="hero-bg hero-bg-1" style={{ backgroundImage: `url(${overview1})` }} />
-        <div className="hero-bg hero-bg-2" style={{ backgroundImage: `url(${overview2})` }} />
-        <div className="hero-overlay" />
-        <header className="hero-header">
-          <nav className="hero-nav">
-            <ul className="hero-nav-links">
-              {[
-                { key: 'about', href: '#about' },
-                { key: 'rooms', href: '#rooms' },
-                { key: 'services', href: '#services' },
-                { key: 'events', href: '#events' },
-                { key: 'blog', href: '#blog' },
-              ].map(({ key, href }) => (
-                <li key={key}>
-                  <a href={href}>
-                    <span className="nav-link-inner">
-                      <span>{t(`nav.${key}`)}</span>
-                      <span>{t(`nav.${key}`)}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="hero-brand">Safina Beach Club</div>
-          <div className="hero-contact">
-            <span className="hero-contact-item">
-              <MapPin size={15} className="hero-icon" />
-              <span>Watamu 🇰🇪</span>
-            </span>
-            <span className="hero-contact-item">
-              <Phone size={15} className="hero-icon" />
-              <span>+254780 214521</span>
-            </span>
-            <select
-              id="lang-select"
-              value={i18n.language.split('-')[0]}
-              onChange={changeLanguage}
-              className="hero-lang-select"
-            >
-              {LANGUAGES.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </header>
-        <div className="hero-content">
-          <h1>{t('hero.title')}</h1>
-          <p>{t('hero.subtitle')}</p>
-          <div className="hero-cta-group">
-            <a href="#rooms" className="cta-btn cta-btn-primary">
-              <BedDouble size={18} className="cta-icon" />
-              {t('hero.cta')}
-            </a>
-            <a href="tel:+254780214521" className="cta-btn cta-btn-secondary">
-              <Phone size={18} className="cta-icon" />
-              {t('contact.title')}
-            </a>
+      <section id="home" className="hero-section">
+        <div className="hero">
+          <div className="hero-bg hero-bg-1" style={{ backgroundImage: `url(${overview1})` }} />
+          <div className="hero-bg hero-bg-2" style={{ backgroundImage: `url(${overview2})` }} />
+          <div className="hero-overlay" />
+          <header className="hero-header">
+            <nav className="hero-nav">
+              <ul className="hero-nav-links">
+                {[
+                  { key: 'about', href: '#about' },
+                  { key: 'rooms', href: '#rooms' },
+                  { key: 'services', href: '#services' },
+                  { key: 'events', href: '#events' },
+                  { key: 'blog', href: '#blog' },
+                ].map(({ key, href }) => (
+                  <li key={key}>
+                    <a href={href}>
+                      <span className="nav-link-inner">
+                        <span>{t(`nav.${key}`)}</span>
+                        <span>{t(`nav.${key}`)}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="hero-brand">Safina Beach Club</div>
+            <div className="hero-contact">
+              <span className="hero-contact-item">
+                <MapPin size={15} className="hero-icon" />
+                <span>Watamu 🇰🇪</span>
+              </span>
+              <span className="hero-contact-item">
+                <Phone size={15} className="hero-icon" />
+                <span>+254780 214521</span>
+              </span>
+              <select
+                id="lang-select"
+                value={i18n.language.split('-')[0]}
+                onChange={changeLanguage}
+                className="hero-lang-select"
+              >
+                {LANGUAGES.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </header>
+          <div className="hero-content">
+            <h1>{t('hero.title')}</h1>
+            <p>{t('hero.subtitle')}</p>
+            <div className="hero-cta-group">
+              <a href="#rooms" className="cta-btn cta-btn-primary">
+                <BedDouble size={18} className="cta-icon" />
+                {t('hero.cta')}
+              </a>
+              <a href="tel:+254780214521" className="cta-btn cta-btn-secondary">
+                <Phone size={18} className="cta-icon" />
+                {t('contact.title')}
+              </a>
+            </div>
           </div>
         </div>
       </section>

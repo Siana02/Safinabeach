@@ -112,12 +112,19 @@
   color: #fff7e6;
 }
 
-/* Hero */
-.hero {
+/* Hero outer container — stays in normal document flow */
+.hero-section {
+  position: relative;
   width: 100vw;
   min-height: 100vh;
+}
+
+/* Hero inner wrapper — sticky so it remains visible behind the Welcome card */
+.hero {
   position: sticky;
   top: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
