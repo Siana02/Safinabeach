@@ -23,9 +23,6 @@ const IMAGE_CONFIG = [
   { src: img5, side: 'right' },
 ]
 
-// Slide duration for each enter / exit tween
-const DUR = 0.4
-
 export default function Welcome() {
   const { t } = useTranslation()
   const containerRef = useRef(null)
@@ -36,52 +33,42 @@ export default function Welcome() {
     const container = containerRef.current
     const imgs = imgEls.current
 
-    // Start every image fully off-screen below the viewport
-    const vh = window.innerHeight
-    IMAGE_CONFIG.forEach((_config, i) => {
+    // Duration each image takes to traverse the full column (timeline units)
+    const imgDuration = 2.5
+    // Stagger between consecutive images in the runway sequence
+    const stagger = 1.0
+
+    // Place all images below their respective columns at full opacity.
+    // The column's overflow:hidden keeps them invisible until they enter.
+    IMAGE_CONFIG.forEach((_, i) => {
       gsap.set(imgs[i], {
-        y: vh,
-        yPercent: -50,
-        opacity: 0,
+        y: imgs[i].parentElement.offsetHeight,
+        opacity: 1,
       })
     })
 
-    // ─── Sequential reveal timeline ───────────────────────────────────
-    // Phase 1 : image 1 slides in, then image 2 slides in
-    // Phase 2 : image 1 out + image 3 in;  image 2 out + image 4 in
-    // Phase 3 : images 3 & 4 slide out, then image 5 slides in
-    // Phase 4 : settling pause with image 5 visible
-    // ──────────────────────────────────────────────────────────────────
+    // One continuous upward runway: each image travels from below its column
+    // to above it. Staggered starts create the flowing sequence with no pauses.
     const tl = gsap.timeline()
 
-    const slideIn    = { y: 0,   opacity: 1, duration: DUR, ease: 'power2.out' }
-    const slideOutUp = { y: -vh, opacity: 0, duration: DUR, ease: 'power2.in' }
+    IMAGE_CONFIG.forEach((_, i) => {
+      const colH = imgs[i].parentElement.offsetHeight
+      const imgH = imgs[i].offsetHeight
+      tl.fromTo(
+        imgs[i],
+        { y: colH },
+        { y: -imgH, duration: imgDuration, ease: 'none' },
+        i * stagger
+      )
+    })
 
-    // Image 1 in
-    tl.to(imgs[0], slideIn,     0)
-    // Image 2 in (slightly after)
-    tl.to(imgs[1], slideIn,     0.7)
-    // Image 1 out + Image 3 in (simultaneous)
-    tl.to(imgs[0], slideOutUp,  1.5)
-    tl.to(imgs[2], slideIn,     1.5)
-    // Image 2 out + Image 4 in (simultaneous)
-    tl.to(imgs[1], slideOutUp,  2.0)
-    tl.to(imgs[3], slideIn,     2.0)
-    // Images 3 & 4 out (simultaneous)
-    tl.to(imgs[2], slideOutUp,  2.8)
-    tl.to(imgs[3], slideOutUp,  2.8)
-    // Image 5 in (after brief gap)
-    tl.to(imgs[4], slideIn,     3.3)
-    // Settling pause — keeps image 5 visible before the pin releases
-    tl.to({}, { duration: 0.8 }, 4.0)
-
-    // Pin the welcome panel and scrub the timeline across 300 vh of scroll.
-    // GSAP handles adding the scroll space (pinSpacing: true by default).
+    // Pin the section while the runway plays; 5 viewport heights gives
+    // comfortable scroll room for all 5 images to enter and exit.
     const st = ScrollTrigger.create({
       id: WELCOME_ST_ID,
       trigger: container,
       start: 'top top',
-      end: () => `+=${window.innerHeight * 3}`,
+      end: () => `+=${window.innerHeight * 5}`,
       pin: true,
       pinSpacing: true,
       animation: tl,
