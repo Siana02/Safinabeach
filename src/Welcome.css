@@ -2,10 +2,11 @@
    WELCOME SECTION
    ───────────────────────────────────────────── */
 
-/* Outer container — scroll space is added by GSAP pin */
+/* Outer container — provides the scroll space and card-stack stacking context */
 .welcome-scroll-container {
   position: relative;
   width: 100vw;
+  min-height: 100vh;
   z-index: 2; /* sits above the Hero (z-index: 1) */
 }
 
