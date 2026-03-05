@@ -40,6 +40,12 @@
   height: 100%;
 }
 
+/* Left and right runway columns clip images outside their bounds */
+.welcome-col-left,
+.welcome-col-right {
+  overflow: hidden;
+}
+
 /* Center column — static letter block */
 .welcome-col-center {
   display: flex;
@@ -116,8 +122,8 @@
   position: absolute;
   width: 78%;
   left: 11%;  /* centred within the column */
-  top: 50%;   /* GSAP applies yPercent: -50 for vertical centering */
-  will-change: transform, opacity;
+  top: 0;     /* GSAP controls vertical position via y transforms */
+  will-change: transform;
   /* Uniform rectangular portrait container */
   aspect-ratio: 3 / 4;
   overflow: hidden;
