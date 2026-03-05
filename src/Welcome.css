@@ -20,8 +20,8 @@
   height: 100vh;
   overflow: hidden;
 
-  /* Temporary warm background; replaced by Welcomebg.jpg below */
-  background-color: #fff7e6;
+  /* Sand-white background matching the gallery section */
+  background-color: #faf6ef;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
