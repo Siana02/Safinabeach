@@ -99,16 +99,16 @@ function App() {
           </div>
         </header>
         <div className="hero-content">
-          <h1>Welcome to Paradise</h1>
-          <p>Experience sun-kissed shores, luxurious stays and unforgettable memories at Safina.</p>
+          <h1>{t('hero.title')}</h1>
+          <p>{t('hero.subtitle')}</p>
           <div className="hero-cta-group">
             <a href="#rooms" className="cta-btn cta-btn-primary">
               <BedDouble size={18} className="cta-icon" />
-              Explore Rooms
+              {t('hero.cta')}
             </a>
             <a href="tel:+254780214521" className="cta-btn cta-btn-secondary">
               <Phone size={18} className="cta-icon" />
-              Contact Us
+              {t('contact.title')}
             </a>
           </div>
         </div>

@@ -11,8 +11,8 @@
     "blog": "Blog"
   },
   "hero": {
-    "title": "Willkommen bei Safina Beach",
-    "subtitle": "Ihr Paradies am Meer",
+    "title": "Willkommen im Paradies",
+    "subtitle": "Erleben Sie sonnenverwöhnte Strände, luxuriöse Aufenthalte und unvergessliche Erinnerungen bei Safina.",
     "cta": "Jetzt Entdecken"
   },
   "about": {
@@ -45,6 +45,12 @@
   },
   "welcome": {
     "title": "Willkommen bei Safina Beach",
-    "description": "Eingebettet an den unberührten Ufern von Watamu, Kenia, ist der Safina Beach Club Ihr Tor zum Paradies. Sonnenverwöhnte Tage, türkisfarbene Gewässer und herzliche Gastfreundschaft erwarten Sie."
+    "description": "Eingebettet an den unberührten Ufern von Watamu, Kenia, ist der Safina Beach Club Ihr Tor zum Paradies. Sonnenverwöhnte Tage, türkisfarbene Gewässer und herzliche Gastfreundschaft erwarten Sie.",
+    "tagline": "Wo Luxus auf die Meeresbrise trifft",
+    "greeting": "Liebe geschätzte Gäste,",
+    "body": "Hier, an den sonnenverwöhnten Ufern von Watamu, haben wir nicht nur ein Resort gebaut, sondern eine lebendige Erinnerung. Jedes Zimmer, jede Mahlzeit, jeder ruhige Abend am Wasser wurde mit Bedacht gestaltet — für Sie.",
+    "closing": "Ob dies Ihr erster Besuch oder eine geschätzte Rückkehr ist, wir versprechen, ihn unvergesslich zu machen.",
+    "signature": "Mit Wärme und Dankbarkeit,",
+    "family": "Die Safina Familie"
   }
 }

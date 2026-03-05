@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import welcomeBg from './assets/Welcomebg.jpg'
@@ -26,6 +27,7 @@ const IMAGE_CONFIG = [
 const DUR = 0.4
 
 export default function Welcome() {
+  const { t } = useTranslation()
   const containerRef = useRef(null)
   // Single ref that holds all five image wrapper DOM nodes
   const imgEls = useRef([])
@@ -133,29 +135,25 @@ export default function Welcome() {
               </svg>
             </div>
 
-            <p className="welcome-subtitle">Welcome to Safina</p>
-            <h2 className="welcome-title">Where luxury meets the ocean breeze</h2>
+            <p className="welcome-subtitle">{t('welcome.title')}</p>
+            <h2 className="welcome-title">{t('welcome.tagline')}</h2>
 
             <div className="welcome-letter">
               <p>
-                Dear valued guests,
+                {t('welcome.greeting')}
               </p>
               <p>
-                It is with the warmest of hearts that we welcome you to Safina Beach — a sanctuary
-                where time slows, the tides speak softly, and every moment is yours to keep.
+                {t('welcome.description')}
               </p>
               <p>
-                Here, along the sun-kissed shores of Watamu, we have built not just a resort,
-                but a living memory. Each room, each meal, each quiet evening by the water
-                has been crafted with intention — for you.
+                {t('welcome.body')}
               </p>
               <p>
-                Whether this is your first visit or a cherished return, we promise to make it
-                unforgettable.
+                {t('welcome.closing')}
               </p>
               <p className="welcome-letter-signature">
-                With warmth &amp; gratitude,<br />
-                <em>The Safina Family</em>
+                {t('welcome.signature')}<br />
+                <em>{t('welcome.family')}</em>
               </p>
             </div>
           </div>

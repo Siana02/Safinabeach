@@ -11,8 +11,8 @@
     "blog": "Blog"
   },
   "hero": {
-    "title": "Bienvenue à Safina Beach",
-    "subtitle": "Votre paradis au bord de la mer",
+    "title": "Bienvenue au Paradis",
+    "subtitle": "Vivez des rivages ensoleillés, des séjours luxueux et des souvenirs inoubliables à Safina.",
     "cta": "Explorer Maintenant"
   },
   "about": {
@@ -45,6 +45,12 @@
   },
   "welcome": {
     "title": "Bienvenue à Safina Beach",
-    "description": "Niché sur les rives vierges de Watamu, au Kenya, le Safina Beach Club est votre porte vers le paradis. Des journées ensoleillées, des eaux turquoise et une hospitalité chaleureuse vous attendent."
+    "description": "Niché sur les rives vierges de Watamu, au Kenya, le Safina Beach Club est votre porte vers le paradis. Des journées ensoleillées, des eaux turquoise et une hospitalité chaleureuse vous attendent.",
+    "tagline": "Là où le luxe rencontre la brise de l'océan",
+    "greeting": "Chers hôtes estimés,",
+    "body": "Ici, le long des rivages ensoleillés de Watamu, nous avons bâti non pas seulement un complexe, mais un souvenir vivant. Chaque chambre, chaque repas, chaque soirée tranquille au bord de l'eau a été conçu avec intention — pour vous.",
+    "closing": "Que ce soit votre première visite ou un retour apprécié, nous promettons de le rendre inoubliable.",
+    "signature": "Avec chaleur et gratitude,",
+    "family": "La Famille Safina"
   }
 }
