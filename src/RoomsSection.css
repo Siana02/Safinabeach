@@ -1,0 +1,125 @@
+/* ─────────────────────────────────────────────
+   ROOMS & SUITES EDITORIAL SECTION
+   ───────────────────────────────────────────── */
+
+.rooms-section-editorial {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff7e6;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: clamp(2rem, 8vw, 10rem);
+  padding-right: clamp(2rem, 8vw, 10rem);
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Centered max-width container */
+.rooms-section-inner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ── Header row — text left, button right ── */
+.rooms-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* ── Left text block ── */
+.rooms-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+/* ── Subtitle: category label ── */
+.rooms-section-subtitle {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4a8a69;
+  margin: 0 0 0.6rem 0;
+}
+
+/* ── Main title ── */
+.rooms-section-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 700;
+  color: #00311f;
+  line-height: 1.2;
+  margin: 0 0 1.25rem 0;
+}
+
+/* ── Description paragraph ── */
+.rooms-section-description {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ── Right CTA container ── */
+.rooms-section-cta {
+  flex-shrink: 0;
+}
+
+/* ── Explore All Rooms button ── */
+.rooms-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #00311f;
+  color: #fff7e6;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+}
+
+.rooms-explore-btn:hover {
+  background-color: #4a8a69;
+}
+
+.rooms-explore-icon {
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rooms-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .rooms-section-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .rooms-section-editorial {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: clamp(1.25rem, 5vw, 2rem);
+    padding-right: clamp(1.25rem, 5vw, 2rem);
+  }
+}
