@@ -2,11 +2,15 @@
    WELCOME SECTION
    ───────────────────────────────────────────── */
 
-/* Outer container — provides the scroll space and card-stack stacking context */
+/* Outer container — provides the scroll space and card-stack stacking context.
+   margin-top: -100vh pulls Welcome 100vh up into hero-section's scroll range so
+   it enters the viewport from the bottom while the sticky hero is still visible,
+   creating the flat "book page turns over" effect. */
 .welcome-scroll-container {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  margin-top: -100vh;
   z-index: 2; /* sits above the Hero (z-index: 1) */
 }
 
