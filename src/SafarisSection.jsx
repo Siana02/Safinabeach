@@ -154,8 +154,8 @@ export default function SafarisSection() {
       </div>
 
       {/* ── Cards Container ── */}
-      <div className="saf-cards">
-        {SAFARIS.map((safari) => {
+      <div className="saf-cards" style={{ height: `${SAFARIS.length * 100}vh` }}>
+        {SAFARIS.map((safari, index) => {
           const isImageLeft = safari.layout === 'image-left'
           const imageCol = (
             <div className="saf-card-half saf-card-image-half">
@@ -182,7 +182,7 @@ export default function SafarisSection() {
           )
 
           return (
-            <div key={safari.id} className="saf-card">
+            <div key={safari.id} className="saf-card" style={{ zIndex: index + 1 }}>
               {isImageLeft ? (
                 <>
                   {imageCol}
