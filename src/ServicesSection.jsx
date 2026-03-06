@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Waves, Flower2, Utensils, Wine, Shirt } from 'lucide-react'
 import './ServicesSection.css'
-import beachImg from './assets/Welcome2.jpg'
+import beachImg from './assets/beachaccess.png'
 import spaImg from './assets/tidepoolspa.png'
 import restaurantImg from './assets/beachrestaurant.png'
 import barImg from './assets/cocktailscheers.jpg'
