@@ -8,7 +8,6 @@
   width: 100vw;
   min-height: 100vh;
   background-color: #fff7e6;
-  overflow: hidden;
 }
 
 /* ─────────────────────────────────────────────
@@ -89,6 +88,7 @@
 .saf-cards {
   position: relative;
   width: 100vw;
+  /* height is set dynamically in JSX: SAFARIS.length × 100vh */
 }
 
 /* ─────────────────────────────────────────────

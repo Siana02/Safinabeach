@@ -105,8 +105,8 @@ export default function SpecialEvents() {
       </div>
 
       {/* ── Cards Container ── */}
-      <div className="se-cards">
-        {EVENTS.map((event) => {
+      <div className="se-cards" style={{ height: `${EVENTS.length * 100}vh` }}>
+        {EVENTS.map((event, index) => {
           const isImageLeft = event.layout === 'image-left'
           const imageCol = (
             <div className="se-card-half se-card-image-half">
@@ -133,7 +133,7 @@ export default function SpecialEvents() {
           )
 
           return (
-            <div key={event.id} className="se-card">
+            <div key={event.id} className="se-card" style={{ zIndex: index + 1 }}>
               {isImageLeft ? (
                 <>
                   {imageCol}
