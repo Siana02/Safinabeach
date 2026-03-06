@@ -1,0 +1,222 @@
+/* ─────────────────────────────────────────────
+   SAFARIS & EXCURSIONS SECTION
+   ───────────────────────────────────────────── */
+
+/* Section container — clean book page feel */
+.saf-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff7e6;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   HEADER BLOCK — centered at top
+   ───────────────────────────────────────────── */
+
+.saf-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 2rem 0;
+}
+
+/* Mini title */
+.saf-mini-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: #4a8a69;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+/* Main title */
+.saf-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #2c2c2c;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+/* Description */
+.saf-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 640px;
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+/* CTA button */
+.saf-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid #4a8a69;
+  color: #4a8a69;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 80px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.saf-cta-btn:hover {
+  background: #4a8a69;
+  color: #fff7e6;
+}
+
+/* ─────────────────────────────────────────────
+   CARDS CONTAINER
+   ───────────────────────────────────────────── */
+
+.saf-cards {
+  position: relative;
+  width: 100vw;
+}
+
+/* ─────────────────────────────────────────────
+   INDIVIDUAL SAFARI CARD — sticky page-turn stack
+   ───────────────────────────────────────────── */
+
+.saf-card {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #fff7e6;
+}
+
+/* Each half takes exactly 50% */
+.saf-card-half {
+  width: 50%;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+/* Image half — fills completely */
+.saf-card-image-half {
+  overflow: hidden;
+}
+
+.saf-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content half — centered column */
+.saf-card-content-half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saf-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 80px;
+  max-width: 600px;
+}
+
+/* Card title */
+.saf-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 28px 0;
+  line-height: 1.2;
+}
+
+/* Card description */
+.saf-card-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 420px;
+  margin: 0 0 16px 0;
+}
+
+/* Duration / label */
+.saf-card-label {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #4a8a69;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .saf-main-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .saf-card {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    position: relative; /* disable sticky on mobile */
+  }
+
+  .saf-card-half {
+    width: 100%;
+    height: 50vw;
+    min-height: 260px;
+  }
+
+  .saf-card-content-half {
+    height: auto;
+  }
+
+  .saf-card-inner {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .saf-header {
+    padding-top: 72px;
+  }
+
+  .saf-main-title {
+    font-size: 2rem;
+  }
+
+  .saf-description {
+    font-size: 15px;
+  }
+
+  .saf-card-title {
+    font-size: 28px;
+  }
+
+  .saf-card-inner {
+    padding: 2.5rem 1.5rem;
+  }
+}
