@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Waves, Flower2, Utensils, Wine, Shirt } from 'lucide-react'
 import './ServicesSection.css'
 import beachImg from './assets/Welcome2.jpg'
-import spaImg from './assets/Welcome4.jpg'
-import restaurantImg from './assets/palmtrees.jpg'
-import barImg from './assets/Overview2.jpg'
-import boutiqueImg from './assets/hallway.jpg'
+import spaImg from './assets/tidepoolspa.png'
+import restaurantImg from './assets/beachrestaurant.png'
+import barImg from './assets/cocktailscheers.jpg'
+import boutiqueImg from './assets/culturalfinds.png'
 
 const SERVICES = [
   {
