@@ -1,0 +1,237 @@
+/* ─────────────────────────────────────────────
+   SPECIAL EVENTS SECTION
+   ───────────────────────────────────────────── */
+
+/* Section container — clean book page feel */
+.se-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff7e6;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   HEADER BLOCK — centered at top
+   ───────────────────────────────────────────── */
+
+.se-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 2rem 0;
+}
+
+/* Mini title */
+.se-mini-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: #4a8a69;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+/* Main title */
+.se-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #2c2c2c;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+/* Description */
+.se-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 640px;
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+/* CTA button */
+.se-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid #4a8a69;
+  color: #4a8a69;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 80px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.se-cta-btn:hover {
+  background: #4a8a69;
+  color: #fff7e6;
+}
+
+/* ─────────────────────────────────────────────
+   CARDS CONTAINER
+   ───────────────────────────────────────────── */
+
+.se-cards {
+  position: relative;
+  width: 100vw;
+}
+
+/* ─────────────────────────────────────────────
+   INDIVIDUAL EVENT CARD — sticky page-turn stack
+   ───────────────────────────────────────────── */
+
+.se-card {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #fff7e6;
+}
+
+/* Each half takes exactly 50% */
+.se-card-half {
+  width: 50%;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+/* Image half — fills completely */
+.se-card-image-half {
+  overflow: hidden;
+}
+
+.se-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content half — centered column */
+.se-card-content-half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.se-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 80px;
+  max-width: 600px;
+}
+
+/* Card title */
+.se-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 28px 0;
+  line-height: 1.2;
+}
+
+/* Secondary image (Card 1 only) */
+.se-card-secondary-img {
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 28px 0;
+  flex-shrink: 0;
+}
+
+/* Card description */
+.se-card-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 420px;
+  margin: 0 0 16px 0;
+}
+
+/* Time label */
+.se-card-time {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #4a8a69;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .se-main-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .se-card {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    position: relative; /* disable sticky on mobile */
+  }
+
+  .se-card-half {
+    width: 100%;
+    height: 50vw;
+    min-height: 260px;
+  }
+
+  .se-card-content-half {
+    height: auto;
+  }
+
+  .se-card-inner {
+    padding: 3rem 2rem;
+  }
+
+  .se-card-secondary-img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .se-header {
+    padding-top: 72px;
+  }
+
+  .se-main-title {
+    font-size: 2rem;
+  }
+
+  .se-description {
+    font-size: 15px;
+  }
+
+  .se-card-title {
+    font-size: 28px;
+  }
+
+  .se-card-inner {
+    padding: 2.5rem 1.5rem;
+  }
+}
