@@ -1,11 +1,14 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import aperitivoMain from './assets/Welcome1.jpg'
-import aperitivoSecondary from './assets/Overview2.jpg'
-import fullMoonImg from './assets/palmtrees.jpg'
-import bonfireImg from './assets/Welcome4.jpg'
-import mijikendaImg from './assets/hallway.jpg'
+import aperitivoMain from './assets/apperitivo1.jpg'
+import aperitivoSecondary from './assets/apperitivo2.jpg'
+import fullMoonMain from './assets/fullmoon1.jpg'
+import fullMoonSecondary from './assets/fullmoon2.png'
+import bonfireMain from './assets/bonfire1.jpg'
+import bonfireSecondary from './assets/bonfire2.jpg'
+import mijikendaMain from './assets/culturalfinds.png'
+import mijikendaSecondary from './assets/turtlewatching.jpg'
 import './SpecialEvents.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -27,8 +30,8 @@ const EVENTS = [
     description:
       'Celebrate beneath the glow of the full moon with music, cocktails, and barefoot dancing on the sand. A night where the ocean, stars, and rhythm meet.',
     time: 'Every Full Moon',
-    mainImage: fullMoonImg,
-    secondaryImage: null,
+    mainImage: fullMoonMain,
+    secondaryImage: fullMoonSecondary,
     layout: 'content-left', // content on left, image on right
   },
   {
@@ -37,8 +40,8 @@ const EVENTS = [
     description:
       'Gather around the fire as the tide whispers along the shore. Stories, music, and warm coastal air make this a night to remember.',
     time: 'Fridays, 07:00 PM',
-    mainImage: bonfireImg,
-    secondaryImage: null,
+    mainImage: bonfireMain,
+    secondaryImage: bonfireSecondary,
     layout: 'image-left',
   },
   {
@@ -47,8 +50,8 @@ const EVENTS = [
     description:
       'Experience the beauty of coastal heritage through music, traditional fashion, and storytelling inspired by the Mijikenda communities of the Kenyan coast.',
     time: 'Saturdays, 08:00 PM',
-    mainImage: mijikendaImg,
-    secondaryImage: null,
+    mainImage: mijikendaMain,
+    secondaryImage: mijikendaSecondary,
     layout: 'content-left',
   },
 ]
@@ -118,13 +121,11 @@ export default function SpecialEvents() {
             <div className="se-card-half se-card-content-half">
               <div className="se-card-inner">
                 <h3 className="se-card-title">{event.title}</h3>
-                {event.secondaryImage && (
-                  <img
-                    src={event.secondaryImage}
-                    alt={`${event.title} detail`}
-                    className="se-card-secondary-img"
-                  />
-                )}
+                <img
+                  src={event.secondaryImage}
+                  alt={`${event.title} detail`}
+                  className="se-card-secondary-img"
+                />
                 <p className="se-card-description">{event.description}</p>
                 <p className="se-card-time">{event.time}</p>
               </div>
