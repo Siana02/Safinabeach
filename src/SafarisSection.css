@@ -139,14 +139,25 @@
   max-width: 600px;
 }
 
-/* Card title */
+/* Card title — styled as mini title */
 .saf-card-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 40px;
-  font-weight: 600;
-  color: #2c2c2c;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: #4a8a69;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+/* Secondary image — centered square */
+.saf-card-secondary-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  display: block;
   margin: 0 0 28px 0;
-  line-height: 1.2;
+  flex-shrink: 0;
 }
 
 /* Card description */
@@ -213,7 +224,7 @@
   }
 
   .saf-card-title {
-    font-size: 28px;
+    font-size: 13px;
   }
 
   .saf-card-inner {

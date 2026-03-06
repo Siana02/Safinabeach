@@ -1,14 +1,22 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import maasaiImg from './assets/Welcome1.jpg'
-import tsavoImg from './assets/Welcome4.jpg'
-import amboseliImg from './assets/palmtrees.jpg'
-import nakuruImg from './assets/coconuttree.jpg'
-import safariBlueImg from './assets/Welcome2.jpg'
-import midaCreekImg from './assets/Welcome5.jpg'
-import gedeImg from './assets/hallway.jpg'
-import hellsKitchenImg from './assets/Welcomebg.jpg'
+import maasaiMain from './assets/maasaimara1.png'
+import maasaiSecondary from './assets/maasaimara2.png'
+import tsavoMain from './assets/tsavo1.jpg'
+import tsavoSecondary from './assets/tsavo2.jpg'
+import amboseliMain from './assets/amboseli1.jpg'
+import amboseliSecondary from './assets/amboseli2.jpg'
+import nakuruMain from './assets/lakenakuru1.jpg'
+import nakuruSecondary from './assets/lakenakuru2.jpg'
+import safariBlueMain from './assets/dolphinwatching1.jpg'
+import safariBlueSecondary from './assets/turtlewatching.jpg'
+import midaCreekMain from './assets/cocktailscheers.jpg'
+import midaCreekSecondary from './assets/midacreek2.jpg'
+import gedeMain from './assets/gediruins1.jpg'
+import gedeSecondary from './assets/gediruins2.jpg'
+import hellsMain from './assets/hellskitchen1.jpg'
+import hellsSecondary from './assets/hellskitchen2.jpg'
 import './SafarisSection.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -20,7 +28,8 @@ const SAFARIS = [
     description:
       "Experience Kenya's most iconic wildlife reserve with guided game drives across vast golden plains. Witness lions, elephants, rhinos, leopards, and buffalo in one of the world's most celebrated safari landscapes.",
     label: '3–4 Day Safari Experience',
-    mainImage: maasaiImg,
+    mainImage: maasaiMain,
+    secondaryImage: maasaiSecondary,
     layout: 'image-left',
   },
   {
@@ -29,7 +38,8 @@ const SAFARIS = [
     description:
       "Journey through Kenya's largest national park, home to the legendary red elephants of Tsavo and dramatic volcanic landscapes that stretch across the savannah.",
     label: '2–3 Day Safari',
-    mainImage: tsavoImg,
+    mainImage: tsavoMain,
+    secondaryImage: tsavoSecondary,
     layout: 'content-left',
   },
   {
@@ -38,7 +48,8 @@ const SAFARIS = [
     description:
       'Discover Amboseli National Park where large elephant herds roam beneath the breathtaking backdrop of Mount Kilimanjaro, Africa\'s highest peak.',
     label: '2 Day Safari',
-    mainImage: amboseliImg,
+    mainImage: amboseliMain,
+    secondaryImage: amboseliSecondary,
     layout: 'image-left',
   },
   {
@@ -47,7 +58,8 @@ const SAFARIS = [
     description:
       'Visit the famous alkaline lake where thousands of flamingos gather and rare black and white rhinos roam within the protected sanctuary.',
     label: '1–2 Day Safari',
-    mainImage: nakuruImg,
+    mainImage: nakuruMain,
+    secondaryImage: nakuruSecondary,
     layout: 'content-left',
   },
   {
@@ -56,7 +68,8 @@ const SAFARIS = [
     description:
       'Sail through the turquoise waters of Watamu Marine National Park for snorkeling, dolphin watching, sandbank relaxation, and exclusive island dining.',
     label: 'Full Day Ocean Experience',
-    mainImage: safariBlueImg,
+    mainImage: safariBlueMain,
+    secondaryImage: safariBlueSecondary,
     layout: 'image-left',
   },
   {
@@ -65,7 +78,8 @@ const SAFARIS = [
     description:
       'Glide through the mangrove-lined waters of Mida Creek aboard a traditional dhow while the sun sets over one of the most peaceful coastal ecosystems in Kenya.',
     label: 'Sunset Experience',
-    mainImage: midaCreekImg,
+    mainImage: midaCreekMain,
+    secondaryImage: midaCreekSecondary,
     layout: 'content-left',
   },
   {
@@ -74,7 +88,8 @@ const SAFARIS = [
     description:
       'Discover the mysterious lost Swahili city of Gede, hidden within the coastal forest and filled with centuries of history, culture, and archaeological wonder.',
     label: 'Half-Day Cultural Tour',
-    mainImage: gedeImg,
+    mainImage: gedeMain,
+    secondaryImage: gedeSecondary,
     layout: 'image-left',
   },
   {
@@ -83,7 +98,8 @@ const SAFARIS = [
     description:
       'Explore the dramatic sandstone canyon formations of Marafa, locally known as Hell\'s Kitchen, where glowing colors transform the landscape at sunset.',
     label: 'Sunset Geological Tour',
-    mainImage: hellsKitchenImg,
+    mainImage: hellsMain,
+    secondaryImage: hellsSecondary,
     layout: 'content-left',
   },
 ]
@@ -154,6 +170,11 @@ export default function SafarisSection() {
             <div className="saf-card-half saf-card-content-half">
               <div className="saf-card-inner">
                 <h3 className="saf-card-title">{safari.title}</h3>
+                <img
+                  src={safari.secondaryImage}
+                  alt={`${safari.title} detail`}
+                  className="saf-card-secondary-img"
+                />
                 <p className="saf-card-description">{safari.description}</p>
                 <p className="saf-card-label">{safari.label}</p>
               </div>
